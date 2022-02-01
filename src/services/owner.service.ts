@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 export interface OwnerEntity {
   id: number;
@@ -45,20 +45,19 @@ export class OwnerService implements ICarOwnersService {
   }
 
   getOwners(): Observable<OwnerEntity[]> {
-    return this.http.get<OwnerEntity[]>(this.ownerUrl)
-
+    return this.http.get<OwnerEntity[]>(this.ownerUrl);
   }
 
   deleteOwner(aOwnerId: number): Observable<OwnerEntity[]> {
     const url = `${this.ownerUrl}/${aOwnerId}`;
-    return this.http.delete<OwnerEntity[]>(url, {headers: this.headers})
 
+    return this.http.delete<OwnerEntity[]>(url, {headers: this.headers});
   }
 
   getOwnerById(aId: number): Observable<OwnerEntity> {
     const url = `${this.ownerUrl}/${aId}`;
-    return this.http.get<OwnerEntity>(url)
 
+    return this.http.get<OwnerEntity>(url);
   }
 
   createOwner(aFirstName: string,
@@ -73,18 +72,11 @@ export class OwnerService implements ICarOwnersService {
         aLastName: aLastName,
         aCars: aCars
       }, {headers: this.headers})
-
   }
 
   editOwner(aOwner: OwnerEntity): Observable<OwnerEntity> {
     const url = `${this.ownerUrl}/${aOwner.id}`;
-    return this.http
-      .put<OwnerEntity>(url, aOwner, {headers: this.headers})
 
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error);
-    return Promise.reject(error.message || error)
+    return this.http.put<OwnerEntity>(url, aOwner, {headers: this.headers});
   }
 }

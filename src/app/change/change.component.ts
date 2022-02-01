@@ -1,22 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormControl,
-  Validators,
-  FormGroup,
-  FormBuilder,
-  FormArray,
-  AbstractControl,
-  ValidationErrors,
-  AsyncValidatorFn
-} from '@angular/forms';
-import { BehaviorSubject, Observable, pipe, of } from 'rxjs'
+import {FormControl, Validators, FormGroup, FormBuilder, FormArray, AbstractControl} from '@angular/forms';
+import { BehaviorSubject } from 'rxjs'
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 import { OwnerService, OwnerEntity, CarEntity } from '../../services/owner.service';
-import { map, debounceTime } from 'rxjs/operators';
-import { CarNumberValidator } from '../../validators/carNumberValidator/carNumberValidator';
+import { CarNumberValidator } from '../carNumberValidator';
 
 type ViewType = 'view' | 'edit';
-
 
 @Component({
   selector: 'app-change',
@@ -34,7 +23,12 @@ export class ChangeComponent implements OnInit {
   routeParams: ParamMap;
   viewType: ViewType;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private ownerService: OwnerService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private ownerService: OwnerService,
+    private router: Router
+  ) {
     this.ownerForm = new FormGroup({
       id: new FormControl(null,),
       aFirstName: new FormControl('', [Validators.required]),

@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {InMemoryDbService} from 'angular-in-memory-web-api';
+import { Injectable } from '@angular/core';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +9,9 @@ export class InMemOwnerService implements InMemoryDbService {
     let owners = [
       {
         id: 1,
-        aFirstName: 'Чубакка',
+        aFirstName: 'Семен',
         aMiddleName: 'Петрович',
-        aLastName: 'Семен',
+        aLastName: 'Чубакка',
         aCars: [{
           carNumber: 'YT1300YT',
           brand: 'Corvet',
@@ -33,9 +33,9 @@ export class InMemOwnerService implements InMemoryDbService {
       },
       {
         id: 3,
-        aFirstName: 'Джабба',
-        aMiddleName: 'Петрович',
-        aLastName: 'Хатт',
+        aFirstName: 'Хатт',
+        aMiddleName: 'Иванович',
+        aLastName: 'Джабба',
         aCars: [{
           carNumber: 'BB4321AA',
           brand: 'Hyundai',
