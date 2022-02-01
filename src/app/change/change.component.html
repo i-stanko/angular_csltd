@@ -87,7 +87,7 @@
           <th mat-header-cell *matHeaderCellDef>Год выпуска</th>
           <td mat-cell *matCellDef="let element let elementIndex = index" [formGroupName]="elementIndex">
             <mat-form-field class="example-full-width" appearance="fill">
-              <input matInput formControlName="year"/>
+              <input type="number" min="1990" max="2022" matInput formControlName="year"/>
               <mat-error
                 *ngIf="carProperties.controls[elementIndex].get('year')?.touched && carProperties.controls[elementIndex].get('year')?.errors?.['required']">
                 <strong>Введите год выпуска автомобиля</strong>
@@ -115,8 +115,8 @@
       </table>
       <div class="inline-block three-button">
         <div *ngIf="viewType !== 'view'" class="inline-block">
-          <button (click)="addNewProperty()" mat-raised-button color="primary">Добавить</button>
-          <button mat-raised-button color="primary" (click)="saveChanges()">Сохранить</button>
+          <button (click)="addNewProperty()" mat-raised-button color="primary" class="btnOne">Добавить авто</button>
+          <button mat-raised-button color="primary" (click)="saveChanges()" class="btnOne">Сохранить</button>
         </div>
         <button mat-button (click)="goBack()">Назад</button>
       </div>

@@ -26,5 +26,11 @@ section {
 }
 
 .selected-owner-row td {
-  color: white;
+  color: gold;
 }
+
+.btnOne:hover {
+  background-color: fuchsia;
+}
+
+

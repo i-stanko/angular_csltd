@@ -16,11 +16,12 @@
 }
 
 .mat-header-cell {
-  padding: 0 8px 0 8px;
+  padding: 0 18px 0 8px;
 }
 
 .mat-cell {
   padding: 15px 8px 0 8px;
+  text-align: center;
 }
 
 .mat-column-action {
@@ -41,4 +42,8 @@
 
 .three-button {
   padding-left: 24px;
+}
+
+.btnOne:hover {
+  background-color: fuchsia;
 }

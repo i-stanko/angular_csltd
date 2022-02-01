@@ -2,7 +2,7 @@
 <section>
   <div class="example-button-row">
     <a routerLink="owner/add/" routerLinkActive="active">
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" class="btnOne">
         Добавить
       </button>
     </a>
@@ -11,6 +11,7 @@
       mat-raised-button
       [disabled]="!selectedOwnerId"
       [routerLink]="['/owner/view/', selectedOwnerId]"
+      class="hover-row"
     >
       Просмотр
     </button>
@@ -18,6 +19,7 @@
       mat-raised-button
       [disabled]="!selectedOwnerId"
       [routerLink]="['/owner/edit/', selectedOwnerId]"
+      class="hover-row"
     >
       Редактировать
     </button>
@@ -25,6 +27,7 @@
       mat-raised-button
       [disabled]="!selectedOwnerId"
       (click)="onDeleteButtonClick()"
+      class="hover-row"
     >
       Удалить
     </button>
